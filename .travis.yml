@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+env:
+  global:
+    secure: HjVQHOYVK1ybSUOnbYCdAL+C755krL+DLQBX7w4bwiw4gwBeDQP4mF75O72Gk55lKXFyOamJjCv1LuWYMOCWrga+LN604a/7Y6qA3XhGLTr8FdbSmO/e56DoY7BNZXucjIzpho4Z/jTC/6DsOzdn59yWe1Xmiqxh8wnRhhP3es4XV2LgjSaooGeYmXa1PLoju7RVCsNle4rDKatCc7V1I+7iABAXUliuK2RzapnfIBGAyHKQTyUCaFdKIDISd731YZVRLSiEE1/EdG0Mjx3iIEnJlXX3h6ZjI4LToYIauAaLxgraX7zh92lXHcRqd0iJWXY1TwrROfSJalJ6tmxwlB2eayx0aGcGceLbxxKvgkdI1nRsV4UO1MbLnhqjrstg8vRYOp4lj1ixZi7UfY79gOEpyCB3nOJNLcqL3KlCItxVNmr01zqpF8E71S4QBGqr9+3XgENjL6Aq9R/2lWIur1wQV9vCA4eO2oa+sdtcVD4zJi7RUzk+rb/kHJW7Q2XOImrLB032vbmPfx90oHRUu1geWwCF8RxOQslJTyrNhlCUdem3dmtKU1tDVd6F9VuGMbA8dAxpTkhVQpa9GB3EOKeBktfkcFxkRGmYije7uB/w+zfJmeoKc9y+z8ihevi3mQS1AhFz1+asFQFZaVl992cz2vf5+0saHT1jug+wNrU=
+before_deploy: npm run build
+deploy:
+  provider: firebase
+  token:
+    secure: ${FIREBASE_TOKEN}
+  skip_cleanup: true
